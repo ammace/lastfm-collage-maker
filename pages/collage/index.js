@@ -42,8 +42,8 @@ async function create(canvas, aspectRatio, period, user) {
   const blueprint = calculate(aspectRatio);
 
   if (!blueprint.albums) return;
-  if (period === undefined) return;
-  if (user === undefined) return;
+  if (period === undefined) period = "overall";
+  if (user === undefined) user = "danchovikk";
 
   fetch(
     "http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&api_key=df0373523543e987dd095adaa12ea8e6&format=json&" +
@@ -118,7 +118,7 @@ export default function Home() {
         aspectRatio = screen.width / screen.height;
         break;
       default:
-        router.replace("/");
+        aspectRatio = screen.width / screen.height;
         break;
     }
     create(canvas.current, aspectRatio, period, user);
