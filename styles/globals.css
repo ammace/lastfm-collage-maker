@@ -13,16 +13,14 @@ body {
 .main {
   display: flex;
   width: 100vw;
-  max-height: 100vh;
-  padding-top: 45vh;
-  align-items: flex-start;
+  height: 100vh;
+  align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
 a {
   color: black;
-  margin-top: -6px;
   background-color: rgb(90, 90, 90);
   padding: 10px;
   text-decoration: none;
@@ -54,7 +52,7 @@ a {
   overflow: hidden;
   max-height: 0px;
   text-align: center;
-  transition: max-height 0.1s ease-in-out;
+  transition: max-height 0.1s linear;
 }
 .pickerMenu.open {
   max-height: 200px;
