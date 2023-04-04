@@ -117,6 +117,9 @@ export default function Home() {
       case "screen":
         aspectRatio = screen.width / screen.height;
         break;
+      default:
+        router.replace("/");
+        break;
     }
     create(canvas.current, aspectRatio, period, user);
   }, [router]);
