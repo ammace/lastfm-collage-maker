@@ -68,7 +68,7 @@ async function create(canvas, aspectRatio, period, user) {
       canvas.height = albumImageSize * blueprint.height;
       const ctx = canvas.getContext("2d");
 
-      var index = 0;
+      var albumIndex = 0;
       var height = 0;
       for (
         let albumsInRow = blueprint.start;
@@ -78,11 +78,14 @@ async function create(canvas, aspectRatio, period, user) {
         const size = Math.ceil(
           (blueprint.start * albumImageSize) / albumsInRow
         );
-
         for (let album = 0; album < albumsInRow; album++) {
-          const image = await loadImage(albums[index]);
-          ctx.drawImage(image, album * size, height, size, size);
-          index++;
+          const imageDetails = [album * size, height, size, size];
+          const image = new Image();
+          image.onload = () => {
+            ctx.drawImage(image, ...imageDetails);
+          };
+          image.src = albums[albumIndex];
+          albumIndex++;
         }
         height += size;
       }
