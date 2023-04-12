@@ -11,12 +11,13 @@ body {
 }
 
 .main {
-  display: flex;
-  width: 100vw;
   height: 100vh;
-  align-items: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
 }
 
 a {
@@ -25,8 +26,9 @@ a {
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
-  border: 1px solid black;
+  border: 2px solid black;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .button {
@@ -41,7 +43,13 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(90, 90, 90);
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.under {
+  border-radius: 8px;
+  background-color: rgb(70, 70, 70);
 }
 
 .pickerMenu {
@@ -57,18 +65,19 @@ a {
 .pickerMenu.open {
   max-height: 200px;
 }
+
 .pickerOption {
   height: 20px;
   width: 100px;
-  background-color: rgb(70, 70, 70);
   cursor: pointer;
 }
-
 .pickerOption:hover {
   width: 100px;
   background-color: rgb(80, 80, 80);
   cursor: pointer;
+  border-radius: 8px;
 }
+
 .placeholder {
   font-weight: 100;
   color: rgb(40, 40, 40);

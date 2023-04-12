@@ -4,7 +4,7 @@ export default function Picker({ options, option, setOption, placeholder }) {
   const [open, setOpen] = useState();
 
   return (
-    <div>
+    <div className="under">
       <div className="button" onClick={() => setOpen((prev) => !prev)}>
         {option ? (
           <div>{option}</div>
